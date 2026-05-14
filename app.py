@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 import agent_brain
 
 # 1. Setup Connection (Replace with your actual Neon URL)
-DATABASE_URL = "postgresql://neondb_owner:npg_9XRuec1EQghO@ep-curly-rain-apgbyubp-pooler.c-7.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+DATABASE_URL = ""
 engine = create_engine(DATABASE_URL)
 
 st.set_page_config(page_title="MENA Immigration Advocate", layout="wide")
