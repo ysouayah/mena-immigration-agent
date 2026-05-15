@@ -1,8 +1,11 @@
 import pandas as pd
 from sqlalchemy import create_engine
+import os
+from dotenv import load_dotenv
+load_dotenv() # This looks for the .env file in the root
 
-# Your Neon Database
-DATABASE_URL = ""
+# Connect to your Neon Database
+DATABASE_URL = os.getenv('dataBaseUrl')
 engine = create_engine(DATABASE_URL)
 
 print("Injecting the Expanded MENA Master Dataset...")

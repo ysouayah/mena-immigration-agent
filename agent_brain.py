@@ -2,9 +2,11 @@ import pandas as pd
 from sqlalchemy import create_engine
 from google import genai
 import os
+from dotenv import load_dotenv
+load_dotenv() # This looks for the .env file in the root
 
-# --- Configurations ---
-DATABASE_URL = ""
+# Connect to your Neon Database
+DATABASE_URL = os.getenv('dataBaseUrl')
 engine = create_engine(DATABASE_URL)
 
 # New 2026 Client Structure

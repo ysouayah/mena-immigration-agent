@@ -3,9 +3,12 @@ import pandas as pd
 import plotly.express as px
 from sqlalchemy import create_engine
 import agent_brain
+import os
+from dotenv import load_dotenv
+load_dotenv() # This looks for the .env file in the root
 
-# 1. Setup Connection (Replace with your actual Neon URL)
-DATABASE_URL = ""
+# Connect to your Neon Database
+DATABASE_URL = os.getenv('dataBaseUrl')
 engine = create_engine(DATABASE_URL)
 
 st.set_page_config(page_title="MENA Immigration Advocate", layout="wide")

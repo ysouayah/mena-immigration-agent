@@ -1,13 +1,16 @@
 import pandas as pd
 from sqlalchemy import create_engine, text
+import os
+from dotenv import load_dotenv
+load_dotenv() # This looks for the .env file in the root
 
 # Connect to your Neon Database
-DATABASE_URL = ""
+DATABASE_URL = os.getenv('dataBaseUrl')
 engine = create_engine(DATABASE_URL)
 
 # Load the local CSV you downloaded from UNHCR
 print("Reading local CSV...")
-df = pd.read_csv('persons_of_concern.csv')
+df = pd.read_csv('/Users/ysfsouayah/Downloads/mena_immigration_agent/data/persons_of_concern.csv')
 
 # Push it to the Neon Database as a raw table
 print("Uploading raw migration data to Neon...")
